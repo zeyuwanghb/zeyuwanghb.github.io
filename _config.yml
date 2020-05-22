@@ -16,11 +16,11 @@ permalink: /:year/:month/:day/:title/
 # other links
 twitter_username: #gaohaoyang126
 facebook_username: #gaohaoyang.water
-github_username:  643435675
-email: 643435675@QQ.com
-weibo_username: 3115521wh
-zhihu_username: hll643435675
-linkedIn_username: gaohaoyang
+github_username:  zeyuwanghb
+email: #643435675@QQ.com
+weibo_username: #3115521wh
+zhihu_username: #hll643435675
+linkedIn_username: #gaohaoyang
 dribbble_username:
 
 description_footer: 无题
@@ -36,7 +36,7 @@ disqus_shortname: #gaohaoyang
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: de86d9a932cab8497a6280d79596b049
-#google_analytics_id: UA-72449510-4 # google 分析追踪id
+google_analytics_id:# UA-72449510-4 # google 分析追踪id
 
 # Build settings
 markdown: kramdown
