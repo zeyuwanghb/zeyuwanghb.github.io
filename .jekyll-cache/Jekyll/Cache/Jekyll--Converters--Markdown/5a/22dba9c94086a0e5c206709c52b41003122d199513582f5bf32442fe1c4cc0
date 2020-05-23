@@ -1,0 +1,91 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#题目" id="markdown-toc-题目">题目</a></li>
+  <li><a href="#解法" id="markdown-toc-解法">解法</a>    <ul>
+      <li><a href="#暴力解法" id="markdown-toc-暴力解法">暴力解法</a></li>
+      <li><a href="#代码" id="markdown-toc-代码">代码</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>#LeetCode 76#
+<em>**</em></p>
+<h2 id="题目">题目</h2>
+<p><img src="https://www.z4a.net/images/2020/05/23/f2d3030d34ecaa39232728e8018339c.md.png" alt="" /></p>
+<h2 id="解法">解法</h2>
+<p>滑动窗口(高级双指针)</p>
+<h3 id="暴力解法">暴力解法</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(int i=0;i&lt;s.length();i++){
+	for(int j=i+1;j&lt;s.length();j++){
+		if(s[i:j])包含t的所有字母:
+			更新长度
+	}
+} ### 滑动窗口 ###
+</code></pre></div></div>
+
+<ol>
+  <li>字符串S中使用双指针中的左右指针技巧，left=right=0，把索引左闭右开区间[left,right)称为一个窗口。</li>
+  <li>增加right指针扩大窗口，直到窗口中的字符串包含了T中的所有字符。</li>
+  <li>停止增加right，此时增加left指针缩小窗口，直到窗口中的字符不在包含T中所有字符。</li>
+  <li>每次增加left都要更新结果</li>
+  <li>重复2 3 4直到right到达S的尽头。</li>
+</ol>
+
+<p>利用两个hashmap充当计数器，一个needs，一个window，记录T字符出现次数和窗口中对应字符出现次数。
+一个字符进入窗口时，更新window计数器；一个字符移除窗口时，减少window计数器；当vaild满足needs时开始收缩窗口；应该在收缩窗口时候更新最终结果。</p>
+
+<h3 id="代码">代码</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution {
+	public String minWindow(String s, String t) {
+        HashMap&lt;Character,Integer&gt; needs=new HashMap&lt;&gt;();
+        HashMap&lt;Character,Integer&gt; window=new HashMap&lt;&gt;();
+        int left=0,right=0;
+        int valid=0;
+        int start=0,len=Integer.MAX_VALUE;
+        char[] chars=t.toCharArray();
+        for(char c:chars){
+            if(needs.containsKey(c)){
+                needs.put(c,needs.get(c)+1);
+            }else {
+                needs.put(c,1);
+            }
+        }
+        while(right&lt;s.length()){
+            char c=s.charAt(right);
+            right++;
+            if(needs.containsKey(c)){
+                if(window.containsKey(c)){
+                    window.put(c,window.get(c)+1);
+                }else{
+                    window.put(c,1);
+                }
+                if(needs.get(c).equals(window.get(c))){
+                    valid++;
+                }
+            }
+            while(valid==needs.size()){
+                if((right-left)&lt;len){
+                    start=left;
+                    len=right-left;
+                }
+                char d=s.charAt(left);
+                left++;
+                if(needs.containsKey(d)){
+                    if(needs.get(d).equals(window.get(d))){
+                        valid--;
+                    }
+                    window.put(d,window.get(d)-1);
+                }
+            }
+        }
+        return len==Integer.MAX_VALUE?"":s.substring(start,start+len);
+	}
+} ### 总结 ### 对于包装类对象以及string的比较，不能用==，应该用equals()
+</code></pre></div></div>
+
+<p>在Integer类底层，当数值大小为-128-127时默认是一个对象，当大于127时，会新建Integer对象</p>
+
+<p>整体思路取自leetcode中的大佬题解</p>
+
+<p>其中valid变量代表window hash表中的元素数之和，与needs hash表个数相同时，说明可以开始优化了</p>
+:ET
