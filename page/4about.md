@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-<iframe src="https://githubbadge.appspot.com/gaohaoyang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+![](https://p2.ssl.qhimgs1.com/sdr/400__/t01a98b70eb9d5d3778.jpg)
 
 咸鱼一枚
 
@@ -19,6 +19,4 @@ type: page
 
 用大佬的模板做个博客记录自己的学习过程
 
-## Comments
 
-{% include comments.html %}

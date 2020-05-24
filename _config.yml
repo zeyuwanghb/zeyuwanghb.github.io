@@ -7,7 +7,7 @@
 
 # Site settings
 title: 胖子
-brief-intro: Android and Python Coder
+brief-intro: Java Coder
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zeyuwanghb.github.io" # the base hostname & protocol for your site
 
