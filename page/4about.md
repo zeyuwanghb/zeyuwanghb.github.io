@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-![](https://p2.ssl.qhimgs1.com/sdr/400__/t01a98b70eb9d5d3778.jpg)
+![](https://www.z4a.net/images/2020/05/26/t01a98b70eb9d5d3778.jpg)
 
 咸鱼一枚
 
