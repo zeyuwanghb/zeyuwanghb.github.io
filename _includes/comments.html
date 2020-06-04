@@ -1,8 +1,26 @@
+<head>
+
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+</head>
+<body>
+    ...
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '1fEYuRyMz7COeV7i0NuH4C8d-gzGzoHsz',
+            appKey: '3pm2Gb5DN9fVjF2yW10Q5qAS'
+        })
+    </script>
+</body>
+<!--
 {% if site.duoshuo_shortname %}
 <!-- 多说评论框 start -->
 <div class="ds-thread" data-thread-key="{{ site.url }}{{ page.url }}" data-title="{{page.title}}" data-url="{{ site.url }}{{ page.url }}"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
 <script type="text/javascript">
     var duoshuoQuery = {
         short_name: "{{site.duoshuo_shortname}}"
@@ -17,6 +35,7 @@
     })();
 </script>
 <!-- 多说公共JS代码 end -->
+<!--
 {% endif %}
 
 {% if site.disqus_shortname %}
@@ -44,3 +63,4 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
+-->
